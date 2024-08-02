@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10, 3.11] # Add other versions as needed
+        python-version: [3.9, 3.10] # Add other versions as needed
 
     steps:
     - name: Checkout repository
