@@ -24,7 +24,7 @@ y_pred = rf.predict(x_test)
 
 
 
-with open ("../assets/metrics.txt", 'w') as outfile:
+with open ("metrics.txt", 'w') as outfile:
     outfile.write(classification_report(y_test, y_pred))
 
 
@@ -49,4 +49,4 @@ plt.ylabel('Feature')
 plt.title('Feature Importances from Random Forest')
 plt.gca().invert_yaxis()  # Invert y-axis to have the most important feature at the top
 plt.show()
-plt.savefig("../assets/feature_importance.png", dpi = 300)
+plt.savefig("feature_importance.png", dpi = 300)
