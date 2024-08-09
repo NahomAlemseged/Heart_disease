@@ -1,5 +1,4 @@
 name: Model Heart
-
 on: 
   push:
 jobs:
