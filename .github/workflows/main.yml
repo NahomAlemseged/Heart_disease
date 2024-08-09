@@ -1,29 +1,31 @@
-name: Python Linting and CI
-
-on:
-  push:
-  pull_request:
-
+name: model_heart
+on: [push]
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-
+  train-and-report:
+    runs-on: [ubuntu-latest]
+    # optionally use a convenient Ubuntu LTS + DVC + CML container
+    container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+           python-version: '3.9'
+      - uses: iterative/setup-cml@v1
+      - uses: actions/checkout@v3
+      - name: Train model
+        run: |
+          # Your ML workflow goes here
+          pip install -r requirements.txt
+          python train.py  # generate plot.png
+      - name: Create CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Post CML report as a comment in GitHub
+          echo " ## CLASSIFICATION REPORT" >> report.md
+          cat metrics.txt >> report.md
+          echo " VIZ" >> report.md
+          echo '![](../assets/feature_importance.png "Feature Importance")' >> report.md
+          cml comment create report.md
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.9' # Specify the Python version you want to use
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-    - name: Lint with flake8
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
