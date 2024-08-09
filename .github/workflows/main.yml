@@ -4,15 +4,8 @@ on:
 jobs:
   train-and-report:
     runs-on: ubuntu-latest
-    
-    container:
-      image: ghcr.io/iterative/cml:0-dvc2-base1
 
     steps:
-      - name: Update GLIBC
-        run: |
-          apt-get update
-          apt-get install -y libc6
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -20,9 +13,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
-      - name: Set up CML
-        uses: iterative/setup-cml@v1
 
       - name: Install dependencies
         run: |
@@ -33,15 +23,15 @@ jobs:
       - name: Train model
         run: |
           cd code
-          python train.py  # Generate plot.png
+          python train.py  # Generate the output files in the assets folder
 
       - name: Create CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # cd assets
           echo "## CLASSIFICATION REPORT" >> report.md
           cat ../assets/metrics.txt >> report.md
           echo "## Visualization" >> report.md
           echo '![Feature Importance](../assets/feature_importance.png "Feature Importance")' >> report.md
           cml comment create report.md
+
