@@ -15,6 +15,7 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          cd ../code/
           python train.py  # generate plot.png
       - name: Create CML report
         env:
@@ -22,7 +23,7 @@ jobs:
         run: |
           # Post CML report as a comment in GitHub
           echo " ## CLASSIFICATION REPORT" >> report.md
-          cat metrics.txt >> report.md
+          cat ../assets/metrics.txt >> report.md
           echo " VIZ" >> report.md
           echo '![](../assets/feature_importance.png "Feature Importance")' >> report.md
           cml comment create report.md
