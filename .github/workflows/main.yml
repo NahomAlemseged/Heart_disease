@@ -9,6 +9,10 @@ jobs:
       image: ghcr.io/iterative/cml:0-dvc2-base1
 
     steps:
+      - name: Update GLIBC
+        run: |
+          apt-get update
+          apt-get install -y libc6
       - name: Checkout code
         uses: actions/checkout@v3
 
