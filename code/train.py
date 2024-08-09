@@ -21,16 +21,9 @@ x_train, x_test, y_train,y_test = train_test_split(x,y, random_state=42, test_si
 rf = RandomForestClassifier(n_estimators=100, max_depth = 10, random_state=42)
 rf.fit(x_train, y_train)
 y_pred = rf.predict(x_test)
-
-
-
 with open ("metrics.txt", 'w') as outfile:
     outfile.write(classification_report(y_test, y_pred))
-
-
-
-
-
+    
 # Extract feature importances
 importances = rf.feature_importances_
 feature_names = x.columns
