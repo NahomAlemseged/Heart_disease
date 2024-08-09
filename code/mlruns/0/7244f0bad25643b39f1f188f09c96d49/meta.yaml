@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/7244f0bad25643b39f1f188f09c96d49/artifacts
+end_time: 1723130052140
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7244f0bad25643b39f1f188f09c96d49
+run_name: peaceful-bee-476
+run_uuid: 7244f0bad25643b39f1f188f09c96d49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723130044551
+status: 3
+tags: []
+user_id: nahomworku

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/cc455b978b0641a3a237ea0834096c19/artifacts
+end_time: 1723129278107
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cc455b978b0641a3a237ea0834096c19
+run_name: adventurous-pug-502
+run_uuid: cc455b978b0641a3a237ea0834096c19
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723129271378
+status: 3
+tags: []
+user_id: nahomworku

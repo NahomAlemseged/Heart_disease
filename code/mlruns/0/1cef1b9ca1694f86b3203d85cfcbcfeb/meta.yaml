@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/1cef1b9ca1694f86b3203d85cfcbcfeb/artifacts
+end_time: 1723128481142
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1cef1b9ca1694f86b3203d85cfcbcfeb
+run_name: shivering-auk-499
+run_uuid: 1cef1b9ca1694f86b3203d85cfcbcfeb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723128481122
+status: 4
+tags: []
+user_id: nahomworku

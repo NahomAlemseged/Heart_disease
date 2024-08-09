@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/d3d32c71bc4c4423832318a3347ba810/artifacts
+end_time: 1723128502278
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d3d32c71bc4c4423832318a3347ba810
+run_name: marvelous-finch-763
+run_uuid: d3d32c71bc4c4423832318a3347ba810
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723128496471
+status: 3
+tags: []
+user_id: nahomworku

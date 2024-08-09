@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/fc66e895f2324402ba10c02141536949/artifacts
+end_time: 1723128329195
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fc66e895f2324402ba10c02141536949
+run_name: abrasive-asp-138
+run_uuid: fc66e895f2324402ba10c02141536949
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723128320689
+status: 3
+tags: []
+user_id: nahomworku

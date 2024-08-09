@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nahomworku/Desktop/ml_prod/Heart_disease/code/mlruns/0/ffc47d1b3d9648b3bfd98dc991292a89/artifacts
+end_time: 1723128735734
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ffc47d1b3d9648b3bfd98dc991292a89
+run_name: upset-ram-990
+run_uuid: ffc47d1b3d9648b3bfd98dc991292a89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723128731052
+status: 3
+tags: []
+user_id: nahomworku
