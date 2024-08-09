@@ -38,6 +38,7 @@ jobs:
           cat metrics.txt >> report.md
           
           echo "## Visualization" >> report.md
-          cml-publish feature_importance.png --md>> report.md
+          echo '![Feature Importance](feature_importance.png "Feature Importance")' >> report.md
+          cml comment create report.md
         
 
