@@ -29,7 +29,6 @@ jobs:
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd assets
           echo "## CLASSIFICATION REPORT" >> report.md
           cat metrics.txt >> report.md
           echo "## Visualization" >> report.md
