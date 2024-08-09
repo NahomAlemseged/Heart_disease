@@ -37,8 +37,8 @@ jobs:
           echo "## CLASSIFICATION REPORT" >> report.md
           cat metrics.txt >> report.md
           
-          echo "## Visualization" >> report.md
-          echo '![Feature Importance](feature_importance.png "Feature Importance")' >> report.md
-          cml comment create report.md
+          # echo "## Visualization" >> report.md
+          # echo '![Feature Importance](feature_importance.png "Feature Importance")' >> report.md
+          # cml comment create report.md
         
 
