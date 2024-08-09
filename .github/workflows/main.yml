@@ -38,6 +38,6 @@ jobs:
           cat metrics.txt >> report.md
           
           echo "## Visualization" >> report.md
-          cml-publish feature-importance.png --md>> report.md
+          cml-publish feature_importance.png --md>> report.md
         
 
