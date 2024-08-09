@@ -1,31 +1,32 @@
-name: model_heart
-on: [push]
-jobs:
-  train-and-report:
-    runs-on: [ubuntu-latest]
-    # optionally use a convenient Ubuntu LTS + DVC + CML container
-    container: docker://ghcr.io/iterative/cml:0-dvc2-base1
-    steps:
-      - uses: actions/setup-python@v4
-        with:
-           python-version: '3.9'
-      - uses: iterative/setup-cml@v1
-      - uses: actions/checkout@v3
-      - name: Train model
-        run: |
-          # Your ML workflow goes here
-          pip install -r requirements.txt
-          python train.py  # generate plot.png
-      - name: Create CML report
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Post CML report as a comment in GitHub
-          echo " ## CLASSIFICATION REPORT" >> report.md
-          cat metrics.txt >> report.md
-          echo " VIZ" >> report.md
-          echo '![](../assets/feature_importance.png "Feature Importance")' >> report.md
-          cml comment create report.md
+# name: model_heart
+# on: [push]
+# jobs:
+#   train-and-report:
+#     runs-on: [ubuntu-latest]
+#     # optionally use a convenient Ubuntu LTS + DVC + CML container
+#     container: docker://ghcr.io/iterative/cml:0-dvc2-base1
+#     steps:
+#       - uses: actions/setup-python@v4
+#         with:
+#            python-version: '3.9'
+#       - uses: iterative/setup-cml@v1
+#       - uses: actions/checkout@v3
+#       - name: Train model
+#         run: |
+#           # Your ML workflow goes here
+#           :/usr/bin/python -m pip install --upgrade pip
+#           pip install -r requirements.txt
+#           python train.py  # generate plot.png
+#       - name: Create CML report
+#         env:
+#           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           # Post CML report as a comment in GitHub
+#           echo " ## CLASSIFICATION REPORT" >> report.md
+#           cat metrics.txt >> report.md
+#           echo " VIZ" >> report.md
+#           echo '![](../assets/feature_importance.png "Feature Importance")' >> report.md
+#           cml comment create report.md
 
 
     
