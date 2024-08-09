@@ -14,6 +14,10 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Set up CML
+        uses: iterative/setup-cml@v1
+
+
       - name: Install dependencies
         run: |
           cd code
@@ -32,7 +36,8 @@ jobs:
           cd code
           echo "## CLASSIFICATION REPORT" >> report.md
           cat metrics.txt >> report.md
+          
           echo "## Visualization" >> report.md
-          echo '![Feature Importance](feature_importance.png "Feature Importance")' >> report.md
-          cml comment create report.md
+          cml-publish feature-importance.png --md>> report.md
+        
 
