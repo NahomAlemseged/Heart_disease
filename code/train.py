@@ -39,7 +39,7 @@ plt.xlabel('Importance')
 plt.ylabel('Feature')
 plt.title('Feature Importances from Random Forest')
 plt.gca().invert_yaxis()  # Invert y-axis to have the most important feature at the top
-plt.savefig("../../assets/feature_plots")
+plt.savefig("../../assets/feature_plots.png")
 
 # save the model to disk
 import pickle
