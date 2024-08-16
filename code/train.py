@@ -8,7 +8,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestClassifier
+<<<<<<< HEAD
 import pickle 
+=======
+import joblib
+>>>>>>> 9c99af7 (deploy)
 
 df = pd.read_csv('../data/heart_wrangles')
 
@@ -19,17 +23,33 @@ x_train, x_test, y_train,y_test = train_test_split(x,y, random_state=42, test_si
 
 # Initialize and fit the Random Forest classifier
 
+<<<<<<< HEAD
 rf = RandomForestClassifier(n_estimators=100, max_depth = 10, random_state=42)
 rf.fit(x_train, y_train)
 y_pred = rf.predict(x_test)
+=======
+model = RandomForestClassifier(n_estimators=100, max_depth = 10, random_state=42)
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+
+
+
+
+>>>>>>> 9c99af7 (deploy)
 with open ("metrics.txt", 'w') as outfile:
     outfile.write(classification_report(y_test, y_pred))
 # Save model
 filename = 'final model.sav'
+<<<<<<< HEAD
 pickle.dump(rf, open(filename, 'wb'))
+=======
+joblib.dump(model, filename)
+
+
+>>>>>>> 9c99af7 (deploy)
 
 # Extract feature importances
-importances = rf.feature_importances_
+importances = model.feature_importances_
 feature_names = x.columns
 
 # Create a DataFrame for feature importances
